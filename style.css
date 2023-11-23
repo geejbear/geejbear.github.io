@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque&family=Caveat&family=Edu+TAS+Beginner&family=Nunito:wght@300;600&family=Playpen+Sans:wght@200;500&family=Roboto:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque&family=Caveat&family=DM+Serif+Display&family=Edu+TAS+Beginner&family=Nunito:wght@300;600&family=Playpen+Sans:wght@200;500&family=Roboto:wght@300;700&display=swap');
+
+
+:root {
+    --font-main: 'Edu TAS Beginner', cursive;
+    --fw-400: 400;
+    --font-titles: 'DM Serif Display', serif;
+    
+    --clr-bg-norm: rgb(219, 5, 5);
+    --clr-bg-secondary:  #4a080e;
+    --clr-bf-focus:rgb(247, 197, 98);
+    --fc-norm: white;
+    --fc-focus: black;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+body {
+    background:
+    linear-gradient(135deg, var(--clr-bg-secondary) 25%, transparent 35%) -50px 0,
+    linear-gradient(225deg, var(--clr-bg-secondary) 25%, transparent 35%) -50px 0,
+    linear-gradient(315deg, var(--clr-bg-secondary) 25%, transparent 35%),
+    linear-gradient(45deg, var(--clr-bg-secondary) 25%, transparent 35%);
+    background-size: 100px 100px;
+    background-color: var(--clr-bg-norm);
+}
+
+h1 {
+    font-family: var(--font-titles);
+    color: var(--fc-norm);
+    margin: 2rem;
+    letter-spacing: 0.8rem;
+    padding: none;
+    text-transform: uppercase;
+    text-shadow: var(--fc-focus) 2px 3px 2px;
+}
+
+section {
+    display: block;
+    text-align: center;
+    margin: auto;
+    padding-top: 6%;
+    padding-left: 5%;
+    padding-right: 5%;
+    height: 80vh;
+    border-radius: 1%;
+}
+
+.circle,
+.square,
+.triangle {
+    width: 80%;
+    border: solid var(--clr-bf-focus);
+    height: 100%;
+    box-shadow: rgb(34, 32, 32) 5px 5px 5px;
+}
+
+.inverse {
+    background-color: var(--clr-bf-focus);
+    color: var(--fc-focus);
+    transition: 0.5s;
+    padding-bottom: 3rem;
+}
+
+.normal {
+    background-color: var(--clr-bg-norm);
+    color: var(--fc-norm);
+    transition: 0.8s;
+
+}
+
+section > h1 {
+    font-size: clamp(30px, 50px, 100px);
+
+}
+
+section > h2 {
+    margin: 2rem;
+    font-family: var(--font-titles);
+    letter-spacing: 0.8rem;
+    color: var(--fc-focus);
+}
+
+section > p {
+    font-family: var(--font-main);
+    line-height: 1.5rem;
+    padding: none;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 1000px) {
+    section > p {
+        line-height: 0.9rem;
+        letter-spacing: none;
+        font-size: 20;
+    }
+}
+
+.triangle-shape,
+.circle-shape,
+.square-shape {
+    display: block;
+    position: static;
+    margin-top: 5rem;
+    margin: auto;
+}
+
+.triangle-shape {
+    width: 0;
+    height: 0;
+    border-left: 3rem solid transparent;
+    border-right: 3rem solid transparent;
+    border-bottom: 5rem solid black;    
+}
+
+.circle-shape {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.square-shape {
+    height: 6rem;
+    width: 6rem;
+    background-color: black;
+}
+
+
+/******************************************/
+/* Credit */
+/* https://codepen.io/TommiTikall/pen/xZwpGR */
+
+
+
+.arrow {
+    opacity: 0;
+    position: absolute;
+        left: 50%;
+        top: 50%;
+    transform-origin: 50% 50%;
+    transform: translate3d(-50%, -50%, 0);
+}
+
+.arrow-first {
+    animation: arrow-movement 2s ease-in-out infinite;
+}
+.arrow-second {
+    animation: arrow-movement 2s 1s ease-in-out infinite;
+}
+
+.arrow:before,
+.arrow:after {
+    background: #fdfafa;
+    content: ' ';
+    display: block;
+    height: 3px; 
+    position: absolute;
+        top: 0;
+        left: 0;
+    width: 30px;
+}
+
+.arrow:before {
+    transform: rotate(45deg) translateX(-23%);
+    transform-origin: top left;
+}
+
+.arrow:after {
+    transform: rotate(-45deg) translateX(23%);
+    transform-origin: top right;
+}
+
+/* Animation */
+@keyframes arrow-movement {
+    0% { 
+        opacity: 0;
+        top: 45%;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% { 
+        opacity: 0;
+    }
+}
